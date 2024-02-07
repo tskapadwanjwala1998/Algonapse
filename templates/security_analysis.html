@@ -1,0 +1,94 @@
+<!-- app/templates/security_analysis.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Analysis Visualization</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style>
+        /* Add some basic styling for the boxes */
+        .output-box {
+            border: 1px solid #a2c7ec;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border-color: black;
+            background-color: white;
+            text-align: center; /* Center text horizontally */
+        }
+
+        .sentiment-img {
+    display: block; /* Make it a block element to center using margin */
+    margin-left: 42.5%;
+    position: relative;
+    width: 10px; /* Adjust width as needed */
+    height: 10px; /* Adjust height as needed */
+        }
+
+        .extreme-sentiment .sentiment-img {
+            filter: brightness(100%);
+        }
+
+        .high-sentiment .sentiment-img {
+            filter: brightness(100%);
+        }
+
+        .moderate-sentiment .sentiment-img {
+            filter: brightness(100%);
+        }
+
+        .weak-sentiment .sentiment-img {
+            filter: brightness(100%);
+        }
+
+        .similar-sentiment .sentiment-img {
+            filter: brightness(100%);
+        }
+    </style>
+</head>
+<body class="container">
+
+    <!-- Back button to go to '/data' -->
+    <a href="{{ url_for('data') }}">Back to Previous Page</a>
+
+    <div class="jumbotron mt-4" align="center">
+        <h1 class="display-4">Security Analysis</h1>
+        <p class="lead">Explore the sentiment analysis comparison between your selected model and ours.</p>
+    </div>
+
+    <!-- Output Box -->
+    <div class="output-box {% if "extremely" in analysis_list %}extreme-sentiment{% elif "highly" in analysis_list %}high-sentiment{% elif "moderately" in analysis_list %}moderate-sentiment{% elif "weakly" in analysis_list %}weak-sentiment{% elif "similar" in analysis_list %}similar-sentiment{% endif %}">
+        <b>{{ analysis_list }}</b>
+        <!-- Sentiment Image -->
+        <div class="sentiment-img" align="left">
+            {% if "extremely" in analysis_list %}
+                <img src="static\img\red_cross.svg" alt="Extreme Sentiment">
+            {% elif "highly" in analysis_list %}
+                <img src="static\img\orange_fire.svg" alt="High Sentiment">
+            {% elif "moderately" in analysis_list %}
+                <img src="static\img\yellow_caution.svg" alt="Moderate Sentiment">
+            {% elif "weakly" in analysis_list %}
+                <img src="static\img\light_green_emoji.svg" alt="Weak Sentiment">
+            {% elif "similar" in analysis_list %}
+                <img src="static\img\dark_green_tick.svg" alt="Similar Sentiment">
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Add more output boxes as needed -->
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // You can add JavaScript logic here if needed
+    </script>
+</body>
+</html>
+

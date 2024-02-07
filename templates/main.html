@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<link rel="stylesheet" href="static/css/w3.css">
+<link rel="stylesheet" type="text/css" href="static/css/style.css">
+
+<link href="static/css/hooli.css" rel="stylesheet">
+<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="//code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<link rel="stylesheet" type="text/css" href="//code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<!-- Styles -->
+<style>
+    body {
+        background-color: #30303d;
+        color: #fff;
+    }
+    
+    #chartdiv {
+        width: 100%;
+        height: 500px;
+    }
+
+    select[name="model_name"] {
+            width: 200px; /* Set your preferred width */
+            /* You can add more styling properties if needed */
+        }
+
+</style>
+</head>
+<section class="app__hero">
+    <video class="app__hero__video" src="static/videos/Background.mp4" loop="" autoplay="" muted=""></video>
+    <div>
+        <div class="row align-middle">
+            <div>
+                <div class="columns medium-12"><img src="static/img/Algonapse.svg" alt="Logo" width="400" height="350">
+                    <h1 class="app__hero__title">Please enter following fields</h1></div>
+
+                <script type="text/javascript">
+                    function showLoading() {
+                        // Display the loading spinner
+                        document.getElementById("loading").style.display = "block";
+                        // Disable the submit button to prevent multiple submissions
+                        document.getElementById("submitBtn").disabled = true;
+                    }
+                </script>
+                <div>
+                    <form method="POST" action="/data" role="form" id="form" onsubmit="showLoading()">
+                        <div class="form-group">
+                            <label class="sr-only">Please select below fields</label>
+                            <input type="text" name="search" placeholder=" Enter Input text" required />
+                            <div>
+                                <select name="model_name">
+                                    <option value="" disabled selected>Select model name</option>
+                                    <option value="textattack/albert-base-v2-CoLA">Albert-base-v2-CoLA</option>
+                                    <option value="textattack/bert-base-uncased-MNLI">Bert-base-uncased-MNLI</option>
+                                    <option value="textattack/roberta-base-WNLI">Roberta-base-WNLI</option>
+                                    <option value="textattack/xlnet-base-cased-QNLI">Xlnet-base-cased-QNLI</option>
+                                    
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
+                            <input class="w3-button w3-block w3-hover-blue-grey" type="submit" value="Submit" id="submitBtn">
+                            <div id="loading" style="display: none;">
+                                <!-- Add your loading spinner here, e.g., using an animated GIF -->
+                                Loading Please Wait for 2-3 minutes...
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-center">
+    <p>Made with ❤ by Taha</p>
+</footer>
+</body>
+
+</html>

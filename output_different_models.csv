@@ -1,0 +1,7 @@
+Model,text,label
+textattack/distilbert-base-cased-CoLA,hasta el ,0.5871355533599854
+textattack/distilbert-base-cased-MRPC,hasta el ,0.4223747253417969
+textattack/distilbert-base-cased-QQP,hasta el ,0.018659519031643867
+textattack/distilbert-base-cased-SST-2,hasta el ,0.9136983752250671
+textattack/distilbert-base-uncased-CoLA,hasta el ,0.835691511631012
+textattack/distilbert-base-uncased-MNLI,hasta el ,0.4254503548145294

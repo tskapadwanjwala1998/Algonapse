@@ -14,7 +14,7 @@ should probably proofread and complete it, then remove this comment. -->
 
 This model is a fine-tuned version of [textattack/distilbert-base-cased-CoLA](https://huggingface.co/textattack/distilbert-base-cased-CoLA) on an unknown dataset.
 It achieves the following results on the evaluation set:
-- Loss: 0.7086
+- Loss: 0.7852
 
 ## Model description
 
@@ -46,7 +46,7 @@ The following hyperparameters were used during training:
 
 | Training Loss | Epoch | Step | Validation Loss |
 |:-------------:|:-----:|:----:|:---------------:|
-| No log        | 1.0   | 1    | 0.7086          |
+| No log        | 1.0   | 1    | 0.7852          |
 
 
 ### Framework versions

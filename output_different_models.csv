@@ -1,7 +1,7 @@
 Model,text,label
-textattack/distilbert-base-cased-CoLA,hasta el ,0.5871355533599854
-textattack/distilbert-base-cased-MRPC,hasta el ,0.4223747253417969
-textattack/distilbert-base-cased-QQP,hasta el ,0.018659519031643867
-textattack/distilbert-base-cased-SST-2,hasta el ,0.9136983752250671
-textattack/distilbert-base-uncased-CoLA,hasta el ,0.835691511631012
-textattack/distilbert-base-uncased-MNLI,hasta el ,0.4254503548145294
+textattack/distilbert-base-cased-CoLA,hello darlings,0.7050042748451233
+textattack/distilbert-base-cased-MRPC,hello darlings,0.4416176974773407
+textattack/distilbert-base-cased-QQP,hello darlings,0.8975322246551514
+textattack/distilbert-base-cased-SST-2,hello darlings,0.9993411898612976
+textattack/distilbert-base-uncased-CoLA,hello darlings,0.9533499479293823
+textattack/distilbert-base-uncased-MNLI,hello darlings,0.7757898569107056

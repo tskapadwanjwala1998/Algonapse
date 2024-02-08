@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://flasksimpleapp1.azurecr.io/
-        username: ${{ secrets.AzureAppService_ContainerUsername_13866d4230e54c7ca922d2f3b39a37f7 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_d83a834287d3495bbd2b4ec9e1b2d82f }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_01163c73cab6454c9ec76632f0a17e7e }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_a27e74dca5204b4c87416951bd2e6b93 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: flasksimpleapp1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_13866d4230e54c7ca922d2f3b39a37f7 }}/mltest:${{ github.sha }}
+        tags: flasksimpleapp1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_01163c73cab6454c9ec76632f0a17e7e }}/mltest:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'Algonapse'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_99cab8b068e64ec099e6cddd15468897 }}
-        images: 'flasksimpleapp1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_13866d4230e54c7ca922d2f3b39a37f7 }}/mltest:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_be61a7ebf72640049c43b4272bb6283d }}
+        images: 'flasksimpleapp1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_01163c73cab6454c9ec76632f0a17e7e }}/mltest:${{ github.sha }}'

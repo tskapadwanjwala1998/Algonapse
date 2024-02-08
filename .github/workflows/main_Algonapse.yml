@@ -61,17 +61,28 @@ jobs:
         run: unzip release.zip
 
       
-      - name: Login to Azure
-        uses: azure/login@v1
+      - name: Log in to container registry
+        uses: docker/login-action@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_AE47E0825B3F4F749BCCF199051F9C60 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_A64DDCC0BB9E428F976B70C1445AD043 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_318C31BD39F94C748D264CEF4517D4CF }}
+          registry: https://flasksimpleapp1.azurecr.io/
+          username: ${{ secrets.AzureAppService_ContainerUsername_01163c73cab6454c9ec76632f0a17e7e }}
+          password: ${{ secrets.AzureAppService_ContainerPassword_a27e74dca5204b4c87416951bd2e6b93 }}
 
-      - name: 'Deploy to Azure Web App'
-        uses: azure/webapps-deploy@v2
-        id: deploy-to-webapp
+      - name: Build and push container image to registry
+        uses: docker/build-push-action@v3
         with:
-          app-name: 'Algonapse'
-          slot-name: 'Production'
+          context: .
+          push: true
+          tags: flasksimpleapp1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_01163c73cab6454c9ec76632f0a17e7e }}/mltest:${{ github.sha }}
+          file: ./Dockerfile
+          
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+            app-name: 'Algonapse'
+            slot-name: 'production'
+            publish-profile: ${{ secrets.AzureAppService_PublishProfile_be61a7ebf72640049c43b4272bb6283d }}
+            images: 'flasksimpleapp1.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_01163c73cab6454c9ec76632f0a17e7e }}/mltest:${{ github.sha }}'
+
           

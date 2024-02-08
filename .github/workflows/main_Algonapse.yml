@@ -38,7 +38,7 @@ jobs:
     needs: build
     environment:
       name: 'production'
-      url: ${{ secrets.AzureAppService_WebAppUrl }}
+      url: 'https://algonapse.azurewebsites.net/'
 
     steps:
     - name: Deploy to Azure Web App

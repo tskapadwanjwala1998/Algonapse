@@ -345,7 +345,7 @@ SQLAlchemy
 sqlitedict==2.1.0
 stack-data
 sympy
-TBB==0.2
+TBB
 tblib
 tenacity
 tensorboard-data-server

@@ -289,7 +289,6 @@ python3-linkedin==1.0.2
 pytorch_revgrad==0.2.0
 pytz==2023.3
 pyviz-comms
-pywin32==305.1
 pywin32-ctypes
 pywinpty
 PyYAML

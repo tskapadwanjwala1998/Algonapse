@@ -69,7 +69,7 @@ protobuf==4.25.2
 psutil==5.9.8
 pyarrow==15.0.0
 pyarrow-hotfix==0.6
-pycld2 @ git+https://github.com/tskapadwanjwala1998/lets_work/raw/9c04f80866dcb6c34f32cf684adc9bf8b602d7ed/pycld2-0.41-cp39-cp39-win_amd64.whl#sha256=6de6e13d6752bda3e7d44e87a832cb79453da642c4ab7ee6dd4b9f87a040eba5
+pycld2 @ https://github.com/tskapadwanjwala1998/lets_work/raw/9c04f80866dcb6c34f32cf684adc9bf8b602d7ed/pycld2-0.41-cp39-cp39-win_amd64.whl#sha256=6de6e13d6752bda3e7d44e87a832cb79453da642c4ab7ee6dd4b9f87a040eba5
 pyparsing==3.1.1
 PySocks==1.7.1
 python-dateutil==2.8.2

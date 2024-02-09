@@ -3,7 +3,6 @@ accelerate==0.26.1
 aiohttp
 aiosignal
 alabaster
-anaconda-anon-usage
 anaconda-client
 anaconda-cloud-auth
 anaconda-navigator

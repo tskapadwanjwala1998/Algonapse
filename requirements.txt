@@ -345,7 +345,6 @@ SQLAlchemy
 sqlitedict==2.1.0
 stack-data
 sympy
-tabulate
 TBB==0.2
 tblib
 tenacity

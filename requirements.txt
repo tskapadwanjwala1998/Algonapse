@@ -56,7 +56,7 @@ comtypes==1.1.10
 conda-build
 conda-pack
 conda-package-handling
-conda-repo-cli==1.0.75
+conda-repo-cli
 conda-token
 conda-verify==3.4.2
 conda_index

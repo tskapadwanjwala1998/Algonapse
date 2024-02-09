@@ -311,7 +311,6 @@ rope
 rpds-py
 rsa
 Rtree
-ruamel-yaml-conda
 ruamel.yaml
 ruamel.yaml.clib
 s3transfer

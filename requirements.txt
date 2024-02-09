@@ -378,7 +378,6 @@ transformer-smaller-training-vocab==0.3.3
 transformers==4.36.1
 tweepy==4.14.0
 Twisted
-twisted-iocpsupport
 typing_extensions
 tzdata==2023.4
 ujson

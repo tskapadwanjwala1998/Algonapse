@@ -56,7 +56,6 @@ comtypes==1.1.10
 conda-build
 conda-pack
 conda-package-handling
-conda-token
 conda-verify==3.4.2
 conda_index
 conda_package_streaming

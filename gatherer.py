@@ -1,20 +1,6 @@
 import requests
-from textattack import Attack
-from textattack.datasets import HuggingFaceDataset
-from textattack.models.wrappers import HuggingFaceModelWrapper
-from textattack.goal_functions import UntargetedClassification
-from textattack.search_methods import AlzantotGeneticAlgorithm, ParticleSwarmOptimization
-from textattack.constraints.pre_transformation import RepeatModification, StopwordModification
-from textattack.transformations import CompositeTransformation, WordSwapEmbedding
-from textattack.augmentation import Augmenter
 from datasets import load_dataset
-from textattack.datasets import Dataset
-import transformers
 import csv
-from textattack.constraints.pre_transformation import RepeatModification, StopwordModification
-from textattack.transformations import CompositeTransformation, WordSwapEmbedding
-import itertools
-import algo
 
 
 # Hugging Face API token
@@ -33,9 +19,9 @@ def data(symbol,source):
     'textattack/distilbert-base-uncased-MNLI']
 
     # Load the dataset
-    dataset = load_dataset("ag_news", split="train[:3]")
+    dataset = load_dataset("ag_news", split="train[:1]")
     
-    #trans and constraints
+    """#trans and constraints
     transformation = CompositeTransformation([
     WordSwapEmbedding()
     # Add more transformations based on the AI/ML model's recommendation
@@ -44,12 +30,12 @@ def data(symbol,source):
     
 	# Run the attack
     attacker = Augmenter(transformation=transformation, constraints=constraints)
-    counter = 0
+    counter = 0 """
     
     
 
     for example, _ in dataset:
-        augmented_texts = attacker.augment(symbol)
+        augmented_texts = symbol
         for augmented_text in augmented_texts:
             csv_filename = f'output_different_models.csv'
             with open(csv_filename, 'w', newline='') as csv_file:

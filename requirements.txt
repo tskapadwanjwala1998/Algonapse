@@ -5,7 +5,6 @@ aiosignal
 alabaster
 anaconda-client
 anaconda-cloud-auth
-anaconda-project
 anyio
 anytree==2.12.1
 appdirs==1.4.4

@@ -186,7 +186,6 @@ multiprocess==0.70.15
 multitasking==0.0.11
 munkres==1.1.4
 mypy-extensions==0.4.3
-navigator-updater
 nbclassic
 nbclient
 nbconvert

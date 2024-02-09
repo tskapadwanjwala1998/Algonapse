@@ -53,7 +53,6 @@ colorama
 colorcet
 comm
 comtypes==1.1.10
-conda
 conda-build
 conda-content-trust
 conda-pack

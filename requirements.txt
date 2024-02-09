@@ -357,7 +357,7 @@ terminado
 terminaltables==3.1.10
 testpath
 text-unidecode
-textattack==0.3.9
+textattack
 textblob==0.17.1
 textdistance
 threadpoolctl

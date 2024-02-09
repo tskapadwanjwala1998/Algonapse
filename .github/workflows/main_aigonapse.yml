@@ -32,9 +32,6 @@ jobs:
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
-      - name: Create .env file
-        run: echo "SCM_MAX_ZIP_PACKAGE_COUNT=3" > .env
-
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
 
@@ -68,9 +65,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_7178BD2A34834900A631AA0B793591FE }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AC29C7CCAAC24AA796E3BFD80AFD097D }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_A5636B15A91D4F5FBEE92599B23D73B2 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_2A7EA5F8679840A18F047E3800B58DF5 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7BF6662024D64023B0669AD9FC131902 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8D662C75019046A7A760CFF24995FB43 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
@@ -78,3 +75,4 @@ jobs:
         with:
           app-name: 'AIgoNapse'
           slot-name: 'Production'
+          
